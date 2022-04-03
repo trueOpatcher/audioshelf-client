@@ -1,0 +1,36 @@
+<div class='container'>
+  <div class="center list flex-column">
+
+    <div *ngFor="let folder of folders; let i = index">
+
+      <input type="radio" id={{i}} name="radio">
+
+      <label *ngIf="folder" class="card flex-row open" for={{i}}>
+        
+        <img [src]="folder.faceImage" alt="" class="book">
+        <div class='flex-column info'>
+          <div class='title'>{{folder.bookName}}</div>
+          <div class='author'>{{folder.author}}</div>
+        </div>
+
+        <div class="buttons">
+          <div class="bottom">
+            <button class='simple' (click)="onClickView(folder)">More</button>
+          </div>
+          <div *ngIf="isUserAdmin" class="bottom">
+            <button class='simple' (click)="onClickEdit(folder.folderName)">Edit</button>
+          </div>
+        </div>
+          
+        
+      </label>
+
+
+    </div>
+
+    <div class="newFolder" *ngIf="isUserAdmin">
+      <button class='simple' (click)="onCreateFolder()">New</button>
+    </div>
+
+  </div>
+</div>

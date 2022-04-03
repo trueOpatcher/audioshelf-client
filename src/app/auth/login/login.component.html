@@ -1,0 +1,43 @@
+<div class="container">
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" formControlName="email" id="email" class="form-control">
+
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" class="form-control">
+
+        </div>
+
+        <div class="bottom-content">
+            <button type="submit" [disabled]="!loginForm.valid">
+                <span>Submit</span>
+                <div class="snake"></div>
+            </button>
+
+            <li><a routerLink="/auth/signup" routerLinkActive="active">Signup</a></li>
+        </div>
+
+    </form>
+
+    <div class="or">
+
+    <div style="display: flex;">
+        <div>or login as:&emsp;</div> 
+        <li>
+            <a (click)="onClickAdmin()">Admin</a>
+        </li>
+        <div>,&ensp;</div>
+        <li>
+            <a (click)="onClickUser()">User</a>
+        </li>
+    </div>
+
+    </div>
+    
+</div>

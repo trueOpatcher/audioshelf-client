@@ -1,0 +1,110 @@
+<div class="page">
+    <div class="catalog">
+            <ul class="tree">
+    
+                
+    
+                <li *ngIf="folder">
+                  <input type="checkbox" id='folder'>
+                  <label class="tree_label" for='folder'>{{ folder.folderName }}</label>
+                  
+                  <ul *ngFor="let file of folder.files; let i = index">
+            
+                    <li>
+                      <input type="checkbox" id={{i}}+>
+                      <label for={{i}} class="name tree_label">{{file.name}}</label>
+                    </li>
+            
+                  </ul>
+            
+                  <ul>
+                    <li>
+                    
+                      <label for="file">
+                        <mat-icon class="addAudioFile">upload</mat-icon>
+                        <input class="form-control inputAudioFile" type="file"
+                          id="file" accept=".mp3" (change)="onSelectFile($event)">
+                      </label>
+                    
+                    
+                      <button class="uploadButton" [disabled]="!folderToUpload" type="submit" (click)="onSendAudio()">
+                        <mat-icon>done</mat-icon>
+                      </button>
+                
+                  </li>
+                  </ul>
+            
+                </li>
+                
+                
+              </ul>
+            
+              <div class="folder-wrapper">
+                <label for="folder-toggle"><mat-icon class="folder-icon">create_new_folder</mat-icon></label>
+                <input type="checkbox" id="folder-toggle">
+                <input class="inputField" type="text" #inputField>
+                <button class="folderButton" (click)="onCreateFolder()"><mat-icon>done</mat-icon></button>
+              </div>
+
+       
+    </div>
+    <div class="review">
+        <div *ngIf="folder" class="container">
+            <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                    <label for="faceImage">Face Image</label>
+                    <input 
+                    class="form-control" 
+                    type="file" 
+                    id="faceImage" 
+                    (change)="onSelectFaceImage($event)">
+                </div>
+                <div *ngIf="folder.faceImage">
+                  <img [src]="folder.faceImage" style="width: 200px; height: 200px;">
+                </div>
+
+                <div class="form-group">
+                    <label for="backImage">Back Image</label>
+                    <input 
+                    class="form-control" 
+                    type="file" 
+                    id="backImage" 
+                    (change)="onSelectBackImage($event)">
+                </div>
+                <div *ngIf="folder.backImage">
+                  <img [src]="folder.backImage" style="width: 200px; height: 200px;">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text"
+                    formControlName="name"
+                    id="name"
+                    class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input 
+                    type="text"
+                    formControlName="author"
+                    id="author"
+                    class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input 
+                    type="textarea"
+                    formControlName="description"
+                    id="description"
+                    class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</div>

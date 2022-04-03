@@ -1,0 +1,64 @@
+@import 'src/scss/playlist';
+
+  .content {
+    margin: 5px;
+  }
+
+  
+
+.mat-icon {
+  font-size: 16px;
+    background: #10122b;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    text-align: center;
+    line-height: 0.9em
+}
+
+
+
+.name::before {
+  width: 0 !important;
+  height: 0 !important;
+  content: "" !important;
+}
+
+
+.name {
+  cursor: pointer;
+  z-index: 5;
+  height: 20px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+li:last-child:after {
+  width: 0;
+  transition: width 2s ease-out;
+}
+
+  :checked ~ li:last-child:after {
+    
+    width: calc(100% + 0.5em) !important;
+    background-color: #020316;
+    position: absolute;
+    bottom: 0;
+    height: 20px !important;
+    left: -.5em;
+    display: block;
+    width: 0;
+    border-left: 1px solid red;
+    content: "";
+  }
+
+.tree li:last-child:before {
+  height: calc(2em + 4px);
+  bottom: auto;
+  }
+

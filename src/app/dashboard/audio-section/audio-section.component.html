@@ -1,0 +1,64 @@
+<div class="content" *ngIf="folder">
+
+    <div class="info">
+
+        <div>
+            <img [src]="folder.faceImage" alt="" class="image">
+        </div>
+        
+        <div class="bookName">
+            {{folder.bookName}}
+        </div>
+
+        <div class="author">
+            {{folder.author}}
+        </div>
+
+        <!-- <div class="trackName" *ngIf="currentFile">
+            <div>{{currentFile.file?.name}}</div>
+        </div> -->
+        
+    </div>
+
+
+    <!-- <div class="">
+
+    </div> -->
+    
+        <div class="slider">
+            {{ state?.readableCurrentTime }}
+            <mat-slider class="time-slider" min="0" [max]="state?.duration" step="1" [value]="state?.currentTime"
+                (input)="onSliderChangeEnd($event)" [disabled]="state?.error"></mat-slider>
+
+            {{ state?.readableDuration }}
+        </div>
+    
+
+
+
+    <div class="media-footer">
+        <div class="control-panel">
+            <button [disabled]="currentFile.index === 0" (click)="previous()">
+
+                <mat-icon class="sideArrows">skip_previous</mat-icon>
+            </button>
+            <button (click)="play()" [disabled]="state?.error" *ngIf="!state?.playing">
+
+                <mat-icon class="play">play_arrow</mat-icon>
+            </button>
+            <button (click)="pause()" *ngIf="state?.playing">
+
+                <mat-icon class="play">pause</mat-icon>
+            </button>
+            <button [disabled]="length === currentFile.index" (click)="next()">
+
+                <mat-icon class="sideArrows">skip_next</mat-icon>
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+</div>

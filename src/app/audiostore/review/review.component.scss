@@ -1,0 +1,86 @@
+
+
+.content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    white-space: nowrap;
+    height: 100%;
+    font-size: 18px;
+
+    letter-spacing: 1px;
+    font-family: "Montserrat";
+    font-weight: bold;
+
+    .images {
+        display: flex;
+        justify-content:center;
+        margin-bottom: 20px;
+        width: 500px;
+        
+
+        .go {
+            display: flex;
+            margin-left: 20px;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        .faceImage {
+            height: 300px;
+            width: 250px;
+        }
+
+        .backImage {
+            height: 300px; 
+            width: 250px;
+        }
+
+        .name {
+            opacity: 0;
+            
+        }
+        
+        .author {
+            opacity: 0;
+        }
+
+        .description {
+            
+            opacity: 0;
+        }
+    }
+
+
+    .desc {
+        font-size: 15px;
+        width: 100%;
+        padding: 10px;
+        padding-left: 30px;
+        margin-right: 44px;
+        text-align: center;
+
+        .name {
+            font-size: 20px;
+            color: #FFF;
+            
+        }
+
+        .author {
+            font-size: 16px;
+        }
+
+        .description {
+            padding-top: 20px;
+            display: block;
+            white-space:initial;
+            overflow-wrap: break-word;
+        }
+    }
+}
+

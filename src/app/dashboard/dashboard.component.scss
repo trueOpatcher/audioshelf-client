@@ -1,0 +1,36 @@
+@import 'src/scss/variables';
+
+
+
+.page {
+    min-width: 850px;
+    display: flex;
+    width: 100%;
+    height: calc(100% - $navbar-height);
+    background-color: black;
+    white-space: nowrap;
+    overflow-x: auto;
+    
+   .wrapper {
+
+    width: $playlist-width;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px #0b0c1b;
+
+    
+
+    .playlist-section {
+        background-color: #0b0c1b;
+        min-width: 200px;
+        height: 100%;
+   }
+    
+   }
+
+    .audio {
+        flex-grow: 1;
+        height: 100%;
+    }
+    
+}

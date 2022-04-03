@@ -1,0 +1,32 @@
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        
+        
+
+        <ul *ngIf="isUserAuth" style="padding-left: 5px;">
+            
+            <li class="dropdown">
+                <a routerLink="/audiostore">Audiostore</a>
+                <div class="snake"></div>
+            </li>
+            
+            
+        </ul>
+
+        <ul>
+            <li>
+                <a (click)="onClickAudioshelf()" >
+                    Audioshelf
+                </a>
+                <div class="snake"></div>
+            </li>
+        </ul>
+
+        <button *ngIf="isUserAuth" class="logout" (click)="onLogout()">
+            <span>Logout</span> 
+            <div class="snake"></div>
+        </button>
+
+    </div>
+</nav>

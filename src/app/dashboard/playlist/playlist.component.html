@@ -1,0 +1,39 @@
+<div class="content">
+  <ul class="tree">
+    
+    
+    
+    <li *ngIf="folder" #checkMark>
+      <input type="checkbox" id='folder' checked>
+      <label class="tree_label" for='folder'>{{ folder.folderName }}</label>
+
+      <ul *ngFor="let file of folder.files; let i = index">
+        <input type="radio" id={{i}} name="audio" >
+
+        <li class="name_box">
+
+          <label
+           for={{i}} 
+           class="tree_label name"
+          (click)="openFile(folder.files[i], i)"
+           >
+           {{file.name}}</label>
+
+        </li>
+
+      </ul>
+
+    </li>
+    
+    
+  </ul>
+
+  
+
+
+  
+  
+  
+
+</div>
+  

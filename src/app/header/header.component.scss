@@ -1,0 +1,98 @@
+
+
+@import '../../scss/variables';
+
+@import'../../scss/_mixins.scss';
+
+
+
+.navbar-default {
+    background-color: black;
+}
+
+.navbar-header {
+    padding: 0 !important;
+}
+
+
+.navbar {
+    padding: 0;
+    border-bottom: 1px solid rgb(59, 57, 57);
+
+    .container-fluid {
+        font-weight: 300;
+        font-size: 20px;
+        color: white;
+        position: relative;
+        height: $navbar-height;
+        justify-content:start;
+
+        .navbar-header {
+            width: 100px;
+        }
+
+        ul {
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+
+            li {
+
+                height: $navbar-height;
+                line-height: $navbar-height;
+                padding: 0 5px;
+                vertical-align: middle;
+                position: relative;
+                cursor: pointer;
+
+                a {
+                    height: $a-font-size;
+                    color: inherit;
+                    text-decoration: none;
+                }
+                
+                
+            }
+            
+
+            
+        }
+        .logout {
+            margin-left: auto;
+            position: relative;
+
+            &:hover .snake {
+                width: calc(100% - 10px);
+                
+            }
+        }
+    }
+}
+
+
+
+
+.snake {
+     @include snake();
+}
+
+li:hover .snake {
+    width: calc(100% - 10px);
+    
+}
+
+
+
+
+
+.logout {
+    height: $navbar-height;
+    line-height: $navbar-height;
+    border: 0;
+    padding: 0 5px;
+    background-color: black;
+    color: white;
+    font-weight: 300;
+
+}

@@ -1,0 +1,47 @@
+
+
+<div *ngIf="folder" class="content">
+    <div class="images">
+        <div *ngIf="folder.faceImage" >
+
+            <img 
+            [src]="folder.faceImage" 
+            alt=""
+            class="faceImage"
+            [@faceImg]="anmStart ? 'start' : 'end'" >
+
+        </div>
+        <div *ngIf="folder.backImage" class="backImage">
+
+            <img [src]="folder.backImage" 
+            alt=""
+            class="backImage"
+            [@backImg]="anmStart ? 'start': 'end'">
+
+        </div>
+        <div 
+        class="go"
+        [@info]="anmStart ? 'folder' : 'start'">
+            <mat-icon (click)="onClickGo(folder)">source</mat-icon>
+        </div>
+        
+    </div>
+
+    <div class="desc">
+        <div 
+        class="name"
+        [@info]="anmStart ? 'name' : 'start'">
+        {{folder.bookName}}</div>
+
+        <div 
+        class="author"
+        [@info]="anmStart ? 'author' : 'start'">
+        {{folder.author}}</div>
+
+        <div 
+        class="description"
+        [@info]="anmStart ? 'description' : 'start'">
+        {{folder.description}}</div>
+
+    </div>
+</div>

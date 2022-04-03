@@ -1,0 +1,15 @@
+
+@mixin snake($top: 43px, $bottom: unset, $left: 5px) {
+    
+    transition: width 0.5s ease;
+    position: absolute;
+    top: $top;
+    bottom: $bottom;
+    left: left;
+    content: "";
+    background-color: #6b0aea;
+    width: 0px;
+    height: 1px;
+    display: block; 
+    
+}

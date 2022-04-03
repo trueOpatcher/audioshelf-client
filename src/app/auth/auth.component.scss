@@ -1,0 +1,13 @@
+@import 'src/scss/variables';
+
+
+.container {
+    width: 100%;
+    height: calc(100% - $navbar-height);
+    background-color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    
+    
+}
+
