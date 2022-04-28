@@ -33,6 +33,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.authService.logout().subscribe();
     }
 
+    onLogin() {
+        this.router.navigate(['/auth']);
+    }
+
     onClickAudioshelf() {
         this.playlistService.folder.pipe(take(1)).subscribe(folder => {
             if(folder) {

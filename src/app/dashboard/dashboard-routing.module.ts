@@ -8,7 +8,7 @@ import { PlaylistComponent } from "./playlist/playlist.component";
 const routes: Routes = [
     {
         path: '', component: DashboardComponent,
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
         children: [
             { path: '' },
             { path: 'playlist', component: PlaylistComponent },

@@ -1,4 +1,4 @@
 export const environment = {
-  serverUrl: 'https://audioshelf.herokuapp.com',
+  serverUrl: 'https://audio-shelf.herokuapp.com',
   production: true
 };

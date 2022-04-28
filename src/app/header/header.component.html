@@ -4,7 +4,7 @@
         
         
 
-        <ul *ngIf="isUserAuth" style="padding-left: 5px;">
+        <ul style="padding-left: 5px;">
             
             <li class="dropdown">
                 <a routerLink="/audiostore">Audiostore</a>
@@ -27,6 +27,11 @@
             <span>Logout</span> 
             <div class="snake"></div>
         </button>
+        <button *ngIf="!isUserAuth" class="login" (click)="onLogin()">
+            <span>Login</span> 
+            <div class="snake"></div>
+        </button>
+
 
     </div>
 </nav>

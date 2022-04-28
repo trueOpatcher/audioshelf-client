@@ -86,7 +86,8 @@ li:hover .snake {
 
 
 
-.logout {
+.logout, .login {
+    margin-left: auto;
     height: $navbar-height;
     line-height: $navbar-height;
     border: 0;

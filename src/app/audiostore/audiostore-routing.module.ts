@@ -10,7 +10,7 @@ import { ReviewComponent } from "./review/review.component";
 const routes: Routes = [
     {
         path: '', component: AudiostoreComponent,
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
         children: [
             { path: '' },
             { path: 'catalog', component: CatalogComponent },
